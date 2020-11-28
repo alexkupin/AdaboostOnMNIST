@@ -21,7 +21,7 @@ def adaboost(xtrain, ytrain, T, classifier_type):
     stumps = np.zeros(shape=T, dtype=object)
     stump_weights = np.zeros(shape=T)
     
-    #get error
+    #make error vector
     errors = np.zeros(shape=T)
     
     #Step 2-6
@@ -50,7 +50,7 @@ def adaboost(xtrain, ytrain, T, classifier_type):
         errors[t]= err
         
         
-    #Step 7 Return Everything, I know there is a better way to return this other than a tuple but yolo
+    #Step 7 Return Everything, I know this would be less confusing if it was returned as an object.
     return (stumps, stump_weights, errors, D_weights)
 
 ##################################################################################
@@ -89,6 +89,7 @@ def predict(stumps,stump_weights, X):
 OddEvenMapping=lambda x: 1 if x%2 ==0 else -1
 xtrain=np.array([np.concatenate(xi)for xi in xtrain])
 xtest = np.array([np.concatenate(xi)for xi in xtest])
+
 #normalize Data
 xtrain=xtrain/255
 xtest=xtest/255
