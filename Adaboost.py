@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-#this was the smoothest programming experience Ive had with a ML algorithm
+
 ##############################################################################
 def adaboost(xtrain, ytrain, T, classifier_type):
     
